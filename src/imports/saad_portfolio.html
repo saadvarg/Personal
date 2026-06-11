@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saad El Mouataz — Fintech Specialist & Solutions Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #080E1A;
+    --surface:   #0F1829;
+    --card:      #131F33;
+    --border:    #1E2D47;
+    --teal:      #00C4A1;
+    --teal-dim:  #00C4A120;
+    --blue:      #3B7CF4;
+    --gold:      #F5A623;
+    --white:     #F0F4FF;
+    --muted:     #8494A8;
+    --subtle:    #3A4A60;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(8,14,26,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+  }
+  .nav-inner {
+    max-width: 860px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-logo {
+    font-size: 15px; font-weight: 700; color: var(--white);
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--teal); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    font-size: 13px; font-weight: 500; color: var(--muted);
+    text-decoration: none; letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 140px 0 100px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,196,161,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 500;
+    color: var(--teal); letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px; height: 1px; background: var(--teal);
+  }
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 60px);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--teal);
+  }
+  .hero-sub {
+    font-size: 18px; font-weight: 400;
+    color: var(--muted); line-height: 1.7;
+    max-width: 580px; margin-bottom: 40px;
+  }
+  .hero-sub strong { color: var(--white); font-weight: 600; }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px;
+    background: var(--teal); color: #080E1A;
+    font-size: 14px; font-weight: 700;
+    text-decoration: none; border-radius: 6px;
+    transition: opacity 0.2s, transform 0.15s;
+    letter-spacing: 0.01em;
+  }
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px;
+    background: transparent; color: var(--white);
+    font-size: 14px; font-weight: 600;
+    text-decoration: none; border-radius: 6px;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .btn-secondary:hover { border-color: var(--teal); transform: translateY(-1px); }
+
+  /* ── BRIDGE DIVIDER ── */
+  .bridge {
+    display: flex; align-items: center; gap: 0;
+    margin: 20px 0 60px;
+    overflow: hidden;
+  }
+  .bridge-item {
+    padding: 10px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 13px; font-weight: 600;
+    color: var(--muted); white-space: nowrap;
+  }
+  .bridge-item.highlight {
+    background: var(--teal-dim);
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+  .bridge-line {
+    flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--border), var(--teal), var(--border));
+    min-width: 20px;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 0; border-top: 1px solid var(--border); }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 500;
+    color: var(--teal); letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 28px; font-weight: 800;
+    color: var(--white); letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    font-size: 15px; color: var(--muted);
+    margin-bottom: 48px; max-width: 500px;
+  }
+
+  /* ── WHAT I DO ── */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .service-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 28px 24px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .service-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .service-icon {
+    width: 40px; height: 40px;
+    background: var(--teal-dim); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; margin-bottom: 16px;
+  }
+  .service-title {
+    font-size: 15px; font-weight: 700;
+    color: var(--white); margin-bottom: 8px;
+  }
+  .service-desc {
+    font-size: 13px; color: var(--muted); line-height: 1.6;
+  }
+
+  /* ── PROJECTS ── */
+  .project-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 32px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal), transparent);
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .project-card:hover { border-color: var(--subtle); }
+  .project-card:hover::before { opacity: 1; }
+  .project-header {
+    display: flex; justify-content: space-between;
+    align-items: flex-start; gap: 16px;
+    margin-bottom: 12px; flex-wrap: wrap;
+  }
+  .project-name {
+    font-size: 18px; font-weight: 700; color: var(--white);
+  }
+  .project-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 500;
+    padding: 4px 10px;
+    background: var(--teal-dim); color: var(--teal);
+    border-radius: 4px; white-space: nowrap;
+  }
+  .project-tagline {
+    font-size: 13px; color: var(--teal);
+    font-weight: 500; margin-bottom: 12px;
+  }
+  .project-desc {
+    font-size: 14px; color: var(--muted);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .project-features {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 20px;
+  }
+  .feature-tag {
+    font-size: 12px; font-weight: 500;
+    padding: 4px 10px;
+    background: var(--surface); color: var(--muted);
+    border: 1px solid var(--border); border-radius: 4px;
+  }
+  .project-stack {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding-top: 16px; border-top: 1px solid var(--border);
+  }
+  .stack-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 400;
+    padding: 3px 8px;
+    background: var(--bg); color: var(--muted);
+    border: 1px solid var(--border); border-radius: 3px;
+  }
+  .project-links {
+    display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;
+  }
+  .project-link {
+    font-size: 13px; font-weight: 600; color: var(--teal);
+    text-decoration: none; display: flex; align-items: center; gap: 4px;
+    transition: opacity 0.2s;
+  }
+  .project-link:hover { opacity: 0.75; }
+
+  /* ── EXPERIENCE ── */
+  .exp-item {
+    display: grid; grid-template-columns: 2px 1fr;
+    gap: 0 24px; margin-bottom: 40px; position: relative;
+  }
+  .exp-line {
+    width: 2px; background: var(--border);
+    border-radius: 2px; position: relative;
+  }
+  .exp-line::before {
+    content: '';
+    position: absolute; top: 4px; left: 50%; transform: translateX(-50%);
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--teal); border: 2px solid var(--bg);
+  }
+  .exp-content { padding-top: 0; }
+  .exp-header { margin-bottom: 8px; }
+  .exp-title {
+    font-size: 15px; font-weight: 700; color: var(--white);
+  }
+  .exp-company {
+    font-size: 13px; color: var(--teal); font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .exp-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--muted);
+  }
+  .exp-bullets { margin-top: 10px; }
+  .exp-bullets li {
+    font-size: 13px; color: var(--muted);
+    line-height: 1.6; margin-bottom: 4px;
+    list-style: none; padding-left: 16px; position: relative;
+  }
+  .exp-bullets li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--teal); font-size: 12px;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .skill-group {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 20px;
+  }
+  .skill-group-title {
+    font-size: 11px; font-weight: 700;
+    color: var(--teal); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .skill-list {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .skill-tag {
+    font-size: 12px; font-weight: 500;
+    padding: 4px 8px;
+    background: var(--surface); color: var(--muted);
+    border: 1px solid var(--border); border-radius: 4px;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .contact-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 24px;
+    text-decoration: none; color: inherit;
+    display: flex; align-items: center; gap: 16px;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .contact-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .contact-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: var(--teal-dim); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .contact-label {
+    font-size: 11px; font-weight: 600;
+    color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 4px;
+  }
+  .contact-value {
+    font-size: 14px; font-weight: 600; color: var(--white);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px 0; border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  footer p {
+    font-size: 13px; color: var(--muted);
+  }
+  footer span { color: var(--teal); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .bridge { display: none; }
+    .contact-grid { grid-template-columns: 1fr; }
+    nav .nav-links { display: none; }
+    .hero { padding: 100px 0 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Saad<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#what-i-do">What I Do</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="container">
+  <section class="hero" style="border:none; padding-top:140px;">
+    <div class="hero-eyebrow">Available for remote roles · Rabat, Morocco</div>
+    <h1>The bridge between<br><em>fintech problems</em><br>and technical solutions.</h1>
+    <p class="hero-sub">
+      I'm <strong>Saad El Mouataz</strong> — a fintech specialist who builds iOS apps,
+      solves operational problems, and deploys AI automation.
+      I work best where the <strong>business problem and the technical solution</strong>
+      need to be understood by the same person.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">See My Work →</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+    <div class="bridge" style="margin-top:48px;">
+      <div class="bridge-item">Business Strategy</div>
+      <div class="bridge-line"></div>
+      <div class="bridge-item highlight">Saad El Mouataz</div>
+      <div class="bridge-line"></div>
+      <div class="bridge-item">Technical Execution</div>
+    </div>
+  </section>
+</div>
+
+<!-- WHAT I DO -->
+<div class="container">
+  <section id="what-i-do">
+    <div class="section-label">What I Do</div>
+    <h2 class="section-title">Three things. All connected.</h2>
+    <p class="section-sub">Each one makes the others stronger. Together they make me different from a pure developer or a pure consultant.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <div class="service-title">iOS & Full-Stack Development</div>
+        <div class="service-desc">I build complete mobile products — SwiftUI frontend, Node.js backend, Supabase database. From architecture to App Store. Real apps, not prototypes.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <div class="service-title">Solutions Engineering</div>
+        <div class="service-desc">I take a complex technical product and make it work for a real client with a real business problem. Integrations, workflow design, API connections, deployment.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <div class="service-title">AI & Workflow Automation</div>
+        <div class="service-desc">I deploy Claude API, ChatGPT, and Make.com into real fintech operations — eliminating manual processes and increasing team throughput by 60–70%.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏦</div>
+        <div class="service-title">Fintech Product & Operations</div>
+        <div class="service-desc">9 years in mortgage workflows, lead management, CRM architecture, and underwriting coordination. I understand the business before I write a line of code.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PROJECTS -->
+<div class="container">
+  <section id="projects">
+    <div class="section-label">Projects</div>
+    <h2 class="section-title">Things I actually shipped.</h2>
+    <p class="section-sub">Every project solves a real fintech problem. All built end-to-end as sole developer.</p>
+
+    <!-- LoanTrack -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <div class="project-name">LoanTrack</div>
+          <div class="project-tagline">Full-Stack Fintech iOS App</div>
+        </div>
+        <div class="project-badge">Production</div>
+      </div>
+      <p class="project-desc">
+        Mortgage brokers lose leads because their workflow is broken — no routing logic, no follow-up system, no visibility.
+        LoanTrack is a complete iOS application that fixes this: lead pipeline management, AI-powered scoring, mortgage calculation, and a four-role permission system. Built end-to-end solo.
+      </p>
+      <div class="project-features">
+        <span class="feature-tag">JWT Auth</span>
+        <span class="feature-tag">4-Role System</span>
+        <span class="feature-tag">AI Lead Scoring</span>
+        <span class="feature-tag">Mortgage Calculator</span>
+        <span class="feature-tag">Analytics Dashboard</span>
+        <span class="feature-tag">Full Leads CRUD</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">SwiftUI</span>
+        <span class="stack-tag">Node.js</span>
+        <span class="stack-tag">Express</span>
+        <span class="stack-tag">Supabase</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">JWT</span>
+        <span class="stack-tag">Claude API</span>
+        <span class="stack-tag">MVVM</span>
+      </div>
+      <div class="project-links">
+        <a href="https://saadvarg.github.io/LoanTrackWeb/" target="_blank" class="project-link">→ Live Demo</a>
+        <a href="https://github.com/saadvarg/LoanTrack-iOS" target="_blank" class="project-link">→ GitHub</a>
+      </div>
+    </div>
+
+    <!-- DealLens -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <div class="project-name">DealLens</div>
+          <div class="project-tagline">AI Equipment Finance Screening Tool</div>
+        </div>
+        <div class="project-badge">Enterprise iOS</div>
+      </div>
+      <p class="project-desc">
+        Equipment finance underwriters spend hours manually extracting data from PDFs to make risk decisions.
+        DealLens automates this — AI extracts the key data points and produces a deterministic risk score in seconds.
+        Built for finance teams who need speed without sacrificing accuracy.
+      </p>
+      <div class="project-features">
+        <span class="feature-tag">PDF AI Extraction</span>
+        <span class="feature-tag">Risk Scoring Engine</span>
+        <span class="feature-tag">Underwriting Workflow</span>
+        <span class="feature-tag">Finance Team UX</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">SwiftUI</span>
+        <span class="stack-tag">Node.js</span>
+        <span class="stack-tag">Supabase</span>
+        <span class="stack-tag">Claude API</span>
+        <span class="stack-tag">PDF Processing</span>
+      </div>
+    </div>
+
+    <!-- BrokerForm Pro -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <div class="project-name">BrokerForm Pro</div>
+          <div class="project-tagline">WordPress Plugin for Mortgage Brokers</div>
+        </div>
+        <div class="project-badge">Live on Gumroad</div>
+      </div>
+      <p class="project-desc">
+        Most mortgage brokers collect applications through email and paper forms — losing data and missing follow-ups.
+        BrokerForm Pro turns any WordPress site into a professional intake and pipeline system. No custom development required.
+      </p>
+      <div class="project-features">
+        <span class="feature-tag">Intake Forms</span>
+        <span class="feature-tag">Pipeline Management</span>
+        <span class="feature-tag">Client Follow-up</span>
+        <span class="feature-tag">Admin Dashboard</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">WordPress</span>
+        <span class="stack-tag">PHP</span>
+        <span class="stack-tag">MySQL</span>
+        <span class="stack-tag">JavaScript</span>
+      </div>
+      <div class="project-links">
+        <a href="https://safepowerservice.ma/demo/" target="_blank" class="project-link">→ Live Demo</a>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="container">
+  <section id="experience">
+    <div class="section-label">Experience</div>
+    <h2 class="section-title">9 years at the intersection.</h2>
+    <p class="section-sub">Finance, operations, and technology — always all three at once.</p>
+
+    <div class="exp-item">
+      <div class="exp-line"></div>
+      <div class="exp-content">
+        <div class="exp-company">CR Equity AI, Inc.</div>
+        <div class="exp-title">Technical Product Manager & Solutions Lead</div>
+        <div class="exp-period">May 2025 – March 2026 · Remote, USA</div>
+        <ul class="exp-bullets">
+          <li>Owned sprint planning, backlog management, and cross-team delivery between CEO, engineering, design, and operations.</li>
+          <li>Led CRM solution design across Salesforce, HubSpot, and Zoho — mapping workflows, designing lead routing logic, advising on integrations.</li>
+          <li>Deployed AI automation using Claude, ChatGPT, and Make.com — measurably reducing manual processes across the team.</li>
+          <li>Coordinated end-to-end mortgage workflow: lenders, title, appraisal, underwriting, and LOS.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-line"></div>
+      <div class="exp-content">
+        <div class="exp-company">Avail by Realtor.com</div>
+        <div class="exp-title">Growth Systems & Operations Manager</div>
+        <div class="exp-period">January 2022 – May 2026 · Remote, USA</div>
+        <ul class="exp-bullets">
+          <li>Built affiliate program infrastructure from zero — partner recruitment, onboarding, commission models, performance dashboards.</li>
+          <li>Managed CRM-based lead distribution pipelines — routing logic, reporting, acquisition spend optimization.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-line"></div>
+      <div class="exp-content">
+        <div class="exp-company">Axion Credit Repair</div>
+        <div class="exp-title">Sales Operations & CRM Manager</div>
+        <div class="exp-period">March 2021 – September 2022 · Remote, USA</div>
+        <ul class="exp-bullets">
+          <li>Built affiliate program and owned full CRM pipeline — lead segmentation, follow-up sequences, conversion optimization.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-line"></div>
+      <div class="exp-content">
+        <div class="exp-company">Manifesto Agency</div>
+        <div class="exp-title">Digital Product & Systems Consultant · Top Rated</div>
+        <div class="exp-period">2016 – 2019 · Remote</div>
+        <ul class="exp-bullets">
+          <li>Web development, digital systems, and growth consulting for international clients. Top Rated Seller on Fiverr.</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- SKILLS -->
+<div class="container">
+  <section id="skills">
+    <div class="section-label">Skills</div>
+    <h2 class="section-title">The full stack — technical and operational.</h2>
+    <p class="section-sub">Every skill here comes from real projects and real companies, not just tutorials.</p>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Mobile</div>
+        <div class="skill-list">
+          <span class="skill-tag">Swift</span>
+          <span class="skill-tag">SwiftUI</span>
+          <span class="skill-tag">UIKit</span>
+          <span class="skill-tag">Xcode</span>
+          <span class="skill-tag">XCTest</span>
+          <span class="skill-tag">MVVM</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Backend</div>
+        <div class="skill-list">
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Express</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">JWT</span>
+          <span class="skill-tag">Supabase</span>
+          <span class="skill-tag">PostgreSQL</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">AI & Automation</div>
+        <div class="skill-list">
+          <span class="skill-tag">Claude API</span>
+          <span class="skill-tag">ChatGPT API</span>
+          <span class="skill-tag">Make.com</span>
+          <span class="skill-tag">n8n</span>
+          <span class="skill-tag">Prompt Eng.</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">CRM & Systems</div>
+        <div class="skill-list">
+          <span class="skill-tag">Salesforce</span>
+          <span class="skill-tag">HubSpot</span>
+          <span class="skill-tag">Zoho</span>
+          <span class="skill-tag">Lead Routing</span>
+          <span class="skill-tag">Pipelines</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Product & Delivery</div>
+        <div class="skill-list">
+          <span class="skill-tag">Technical PM</span>
+          <span class="skill-tag">Agile/Scrum</span>
+          <span class="skill-tag">Jira</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Git</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Domain</div>
+        <div class="skill-list">
+          <span class="skill-tag">Fintech</span>
+          <span class="skill-tag">Mortgage</span>
+          <span class="skill-tag">Lending</span>
+          <span class="skill-tag">Underwriting</span>
+          <span class="skill-tag">LOS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div class="container">
+  <section id="contact">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Let's talk.</h2>
+    <p class="section-sub">Open to Solutions Engineer, Technical PM, and Founding Engineer roles — remote globally. Also available for fintech consulting and iOS development freelance.</p>
+    <div class="contact-grid">
+      <a href="mailto:elmouataz.saad@gmail.com" class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">elmouataz.saad@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/saad-elmouataz-558bb2106" target="_blank" class="contact-card">
+        <div class="contact-icon">💼</div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">saad-elmouataz</div>
+        </div>
+      </a>
+      <a href="https://github.com/saadvarg" target="_blank" class="contact-card">
+        <div class="contact-icon">⌨️</div>
+        <div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">github.com/saadvarg</div>
+        </div>
+      </a>
+      <a href="https://saadvarg.github.io/LoanTrackWeb/" target="_blank" class="contact-card">
+        <div class="contact-icon">📱</div>
+        <div>
+          <div class="contact-label">LoanTrack Demo</div>
+          <div class="contact-value">View Live Project</div>
+        </div>
+      </a>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>Built by <span>Saad El Mouataz</span> · Rabat, Morocco · Open to remote roles globally</p>
+  </div>
+</footer>
+
+</body>
+</html>

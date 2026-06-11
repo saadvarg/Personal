@@ -1,0 +1,163 @@
+
+<style>
+  .brief { font-size: 13px; line-height: 1.75; color: var(--color-text-primary); }
+  .section { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem 1.5rem; margin-bottom: 1rem; background: var(--color-background-primary); }
+  .label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; color: var(--color-text-secondary); text-transform: uppercase; margin-bottom: 0.5rem; font-family: var(--font-mono); }
+  .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin: 2px; background: var(--color-background-secondary); color: var(--color-text-secondary); border: 0.5px solid var(--color-border-tertiary); font-family: var(--font-mono); }
+  h3 { font-size: 15px; font-weight: 500; margin: 0 0 0.75rem; color: var(--color-text-primary); }
+  p { margin: 0.35rem 0; color: var(--color-text-secondary); font-size: 13px; }
+  code { font-family: var(--font-mono); font-size: 12px; background: var(--color-background-secondary); padding: 1px 5px; border-radius: 4px; color: var(--color-text-primary); }
+  .strong { color: var(--color-text-primary); font-weight: 500; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 0.85rem 0; }
+  .row { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 1rem; }
+  ul { margin: 0.35rem 0 0.35rem 1.1rem; padding: 0; color: var(--color-text-secondary); font-size: 13px; }
+  li { margin-bottom: 2px; }
+  @media (max-width: 500px) { .row { grid-template-columns: 1fr; } }
+</style>
+
+<div class="brief">
+
+  <div class="section">
+    <div class="label">Source of Truth — LinkedIn PDF</div>
+    <h3 style="font-size:17px; margin-bottom:0.25rem;">Saad El Mouataz — One-Page Portfolio HTML Brief</h3>
+    <p>Fintech Specialist · iOS Developer · Solutions Engineer · AI Automation</p>
+    <p style="margin-top:0.5rem;">Dark theme · Glassmorphism · Sage green / emerald accents · Remote-first · Available immediately</p>
+  </div>
+
+  <div class="row">
+    <div class="section">
+      <div class="label">Color Tokens</div>
+      <p><code>--bg</code>: <code>#0A0F0D</code></p>
+      <p><code>--glass-bg</code>: <code>rgba(255,255,255,0.04)</code></p>
+      <p><code>--glass-border</code>: <code>rgba(255,255,255,0.08)</code></p>
+      <p><code>--accent</code>: <code>#4ADE80</code> (emerald)</p>
+      <p><code>--accent-muted</code>: <code>#86EFAC</code> (sage)</p>
+      <p><code>--text</code>: <code>#F1F5F9</code></p>
+      <p><code>--text-muted</code>: <code>#94A3B8</code></p>
+      <p><code>--text-dim</code>: <code>#475569</code></p>
+    </div>
+    <div class="section">
+      <div class="label">Typography</div>
+      <p><span class="strong">Display:</span> Inter 700, tracking <code>-0.03em</code></p>
+      <p><span class="strong">Body:</span> Inter 400, <code>line-height: 1.7</code></p>
+      <p><span class="strong">Labels / mono:</span> JetBrains Mono 400</p>
+      <p><span class="strong">Code comments:</span> <code>// prefix</code> in accent-muted</p>
+      <hr class="divider">
+      <p>Hero H1: 56px · Section label: 11px mono uppercase · Role title: 15px · Body: 14px</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label">Hero Section</div>
+    <p><span class="strong">Eyebrow (mono):</span> <code>Fintech Specialist · iOS Developer · Solutions Engineer · AI Automation</code></p>
+    <p><span class="strong">H1:</span> "I build products and solve operational problems at the intersection of finance and technology."</p>
+    <p><span class="strong">Subtext:</span> "For 9 years I have been the person companies call when they need someone who understands both the business problem and the technical solution, and can build the bridge between them."</p>
+    <p><span class="strong">CTAs:</span> <code>View Projects →</code> (accent fill) · <code>GitHub ↗</code> (ghost) · <code>Get in touch</code> (ghost)</p>
+    <p><span class="strong">Links:</span> GitHub: <code>github.com/saadvarg</code> · LoanTrack demo: <code>saadvarg.github.io/LoanTrackWeb/</code></p>
+  </div>
+
+  <div class="section">
+    <div class="label">Projects — 3 Cards (from LinkedIn Summary)</div>
+
+    <p class="strong">// 01 · LoanTrack</p>
+    <p>Complete fintech iOS app — SwiftUI, Node.js, Supabase, PostgreSQL. JWT auth, AI lead scoring, mortgage calculator, four-role permission system, analytics dashboard, PDF export.</p>
+    <p><span class="badge">SwiftUI</span><span class="badge">Node.js</span><span class="badge">Supabase</span><span class="badge">JWT Auth</span><span class="badge">AI Scoring</span></p>
+    <p>Live: <code>saadvarg.github.io/LoanTrackWeb/</code></p>
+    <hr class="divider">
+
+    <p class="strong">// 02 · DealLens</p>
+    <p>AI-powered equipment finance screening tool. React/Vite web client for equipment finance teams.</p>
+    <p><span class="badge">React</span><span class="badge">Vite</span><span class="badge">AI Screening</span><span class="badge">Fintech</span></p>
+    <hr class="divider">
+
+    <p class="strong">// 03 · BrokerForm Pro</p>
+    <p>Mortgage broker pipeline management tool. WordPress loan application plugin for broker workflows.</p>
+    <p><span class="badge">WordPress</span><span class="badge">PHP</span><span class="badge">Pipeline Mgmt</span><span class="badge">Mortgage</span></p>
+  </div>
+
+  <div class="section">
+    <div class="label">About / Summary — from LinkedIn</div>
+    <p><span class="strong">What I build:</span> Full-stack iOS applications — SwiftUI, Node.js, Supabase, PostgreSQL. Shipped LoanTrack (complete fintech iOS app), DealLens (AI equipment finance screening), and BrokerForm Pro (mortgage broker pipeline tool).</p>
+    <p><span class="strong">What I solve:</span> Come into fintech and finance companies, identify where technology, workflow, and people are misaligned — then fix it. CRM solutions across Salesforce, HubSpot, and Zoho. AI automation via Claude and Make.com. End-to-end mortgage workflow coordination.</p>
+    <p><span class="strong">Where I add most value:</span> Solutions Engineering · Founding Engineer roles · Technical Product roles.</p>
+    <p style="margin-top:0.5rem;">Fluent in Arabic, French, English · Rabat, Morocco · Remote-first · Available immediately</p>
+  </div>
+
+  <div class="section">
+    <div class="label">Experience Timeline — 4 Roles + Education</div>
+
+    <p class="strong">May 2025 – Mar 2026 · CR Equity AI, Inc. · Remote, USA</p>
+    <p style="color:var(--color-text-primary); font-size:13px;">Technical Product Manager & Solutions Lead</p>
+    <ul>
+      <li>Owned end-to-end product delivery, Jira sprint planning, backlog management, cross-team alignment across engineering, design, and operations</li>
+      <li>Diagnosed and solved operational bottlenecks across full mortgage workflow — lenders, title, appraisal, underwriting, LOS</li>
+      <li>Led CRM solution design sessions: business process mapping, lead routing logic, multi-platform integration across Salesforce, HubSpot, Zoho</li>
+      <li>Deployed AI automation (Claude, ChatGPT, Gemini, Make.com) — eliminated manual processes, increased team throughput significantly</li>
+      <li>Managed full QA cycles, test case writing, bug reporting, fix validation, deployment sign-off</li>
+      <li>Redesigned company website and web app UI/UX in Figma</li>
+      <li>Produced investor pitch decks, conference materials, and partner-facing documentation</li>
+    </ul>
+    <hr class="divider">
+
+    <p class="strong">Jan 2022 – May 2026 · Avail by Realtor.com · Remote, USA</p>
+    <p style="color:var(--color-text-primary); font-size:13px;">Growth Systems & Operations Manager</p>
+    <ul>
+      <li>Built and scaled complete affiliate program infrastructure from zero — partner recruitment, onboarding workflows, commission models, performance tracking dashboards</li>
+      <li>Managed CRM-based lead distribution pipelines — routing logic, reporting systems to track partner channel performance and optimize acquisition spend</li>
+      <li>Integrated SEO strategy alongside affiliate channels to strengthen organic acquisition</li>
+      <li>Monitored and optimized client inquiry pipelines to support sales team conversion goals</li>
+    </ul>
+    <hr class="divider">
+
+    <p class="strong">Mar 2021 – Sep 2022 · Axion Credit Repair · Remote, USA</p>
+    <p style="color:var(--color-text-primary); font-size:13px;">Sales Operations & CRM Manager</p>
+    <ul>
+      <li>Built affiliate marketing program from zero — program structure, partner recruitment playbook, end-to-end campaign execution in credit and lending niche</li>
+      <li>Managed CRM data quality and pipeline hygiene, lead segmentation, follow-up sequence design, conversion rate optimization</li>
+      <li>Generated consistent qualified lead volume, optimized channel mix based on performance data and ROI analysis</li>
+    </ul>
+    <hr class="divider">
+
+    <p class="strong">2016 – 2019 · Manifesto Agency · Remote, USA</p>
+    <p style="color:var(--color-text-primary); font-size:13px;">Digital Product & Systems Consultant · Top Rated</p>
+    <ul>
+      <li>Delivered digital product strategy, web development, and systems consulting for international clients across multiple industries</li>
+      <li>Built WordPress web applications, SEO frameworks, and digital marketing systems</li>
+      <li>Earned Top Rated Seller status on Fiverr — recognised for high-quality delivery and measurable client outcomes</li>
+    </ul>
+    <hr class="divider">
+
+    <p class="strong">Education · Oct 2013 – Jan 2018 · HEM Business School</p>
+    <p>Master's degree, Business Management, Marketing & Related Support Services</p>
+  </div>
+
+  <div class="section">
+    <div class="label">Skills — from LinkedIn Top Skills + Summary</div>
+    <p><span class="strong">Top Skills:</span> <span class="badge">WordPress</span><span class="badge">React Native</span><span class="badge">React.js</span></p>
+    <p><span class="strong">Languages:</span> <span class="badge">Arabic</span><span class="badge">French</span><span class="badge">English</span></p>
+    <p><span class="strong">Certifications:</span> Silver Award for Mobile Advertising · Excellence in Marketing Campaign</p>
+    <p style="margin-top:0.5rem;color:var(--color-text-dim); font-size:12px;">Note: Expand skill grid using full stack from portfolio doc if needed — LinkedIn lists only top 3.</p>
+  </div>
+
+  <div class="section">
+    <div class="label">Contact Section</div>
+    <p><span class="strong">Headline:</span> "Let's build something real."</p>
+    <p><span class="strong">Subtext:</span> "Open to Solutions Engineering, Founding Engineer, and Technical Product roles. Remote-first. Available immediately."</p>
+    <p><span class="strong">Email:</span> <code>elmouataz.saad@gmail.com</code></p>
+    <p><span class="strong">Phone:</span> <code>+212 762 178 594</code></p>
+    <p><span class="strong">GitHub:</span> <code>github.com/saadvarg</code></p>
+    <p><span class="strong">LinkedIn:</span> <code>linkedin.com/in/saad-elmouataz-558bb2106</code></p>
+    <p>Form: Full name · Email · What are you looking for? · Project description · Send message →</p>
+  </div>
+
+  <div class="section">
+    <div class="label">Glassmorphism Card CSS</div>
+    <p><code>background: rgba(255,255,255,0.04)</code></p>
+    <p><code>border: 1px solid rgba(255,255,255,0.08)</code></p>
+    <p><code>backdrop-filter: blur(12px)</code></p>
+    <p><code>border-radius: 16px</code></p>
+    <p><code>hover border: rgba(74,222,128,0.25)</code></p>
+    <p><code>hover shadow: 0 0 20px rgba(74,222,128,0.06)</code></p>
+  </div>
+
+</div>
